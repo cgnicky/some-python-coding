@@ -12,7 +12,7 @@ class Solution:
         while i >= 0 and nums[i] >= nums[i+1]: 
             i -= 1 # Moving left
         
-        # The list is in descending order, just reserve it in ascending order to get the smallest combination
+        # If list is in descending order, just reserve it in ascending order to get the smallest combination
         if i < 0:
             l, r = 0, len(nums)-1
             while (l < r):
@@ -20,7 +20,9 @@ class Solution:
                 l += 1
                 r -= 1
         else:
+            # Search the item from the end of list
             j = len(nums)  - 1
+            
             # Find the first element that greater than pivot value
             while j >= 0 and nums[i] >= nums[j]:
                 j -= 1 # Moving left
